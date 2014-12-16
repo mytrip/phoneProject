@@ -1,0 +1,1 @@
+KISSY.add("testapp/dplpage/index",function(a){a.use("touch");{var b=a.all;({$container:b(".views"),$loading:b(".loading-text")})}return{init:function(){console.log("page inited")}}});

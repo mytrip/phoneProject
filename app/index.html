@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.css">
+  <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.themes.css">
+  <link rel="stylesheet" href="/dplpage/mods/kitchen-sink.css">
+  <title>all pages in this mobile project</title>
+  <script src="http://g.tbcdn.cn/kissy/m/0.2.0/??mini-full-min.js,touch-min.js" data-config="{combine:true}"></script>
+  <script src="http://g.tbcdn.cn/tb/tracker/1.0.14/index.js"></script>
+  <script>
+        var basePath = '{cdnPrefix}o2o/testapp/0.0.1/',
+        l = window.location,
+        debug = ~l.href.indexOf('debug') || l.hostname === 'localhost';
+
+        if (debug) {
+            basePath = 'http://localhost:9000/';
+        }
+        KISSY.config({
+            combine: true,
+            packages: [
+                {
+                  name: 'testapp',
+                  base: basePath,
+                  ignorePackageNameInUri: true,
+                  debug: true,
+                  combine: false
+                },
+                {
+                  name: 'tbc/mtop',
+                  path: 'http://g.tbcdn.cn/tbc/mtop/0.1.8',
+                  ignorePackageNameInUri: true
+                }
+            ]
+        });
+  </script>
+</head>
+<body>
+   <div class="views">
+       <div class="navbar">
+           <div class="navbar-inner">
+               <div class="center sliding" style="left: 109.5px">Framework7</div>
+               <div class="right">
+                   <a href="#" class="open-panel link icon-only">
+                       <i class="icon icon-bars"></i>
+                   </a>
+               </div>
+           </div>
+       </div>
+       <div class="toolbar">
+           <div class="toolbar-inner">
+               <a href="#" class="link">link1</a>
+               <a href="#" data-popover=".popover-menu" class="open-popover link">menu</a>
+           </div>
+       </div>
+       <div class="pages navbar-through toolbar-through">
+           <div class="page">
+               <div class="page-content">
+                   <div class="content-block-title">Welcome to Framework7</div>
+                   <div class="content-block">
+                       <a href="#" class="button">read about framework7</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <script>
+        KISSY.use(['testapp/dplpage/index.js'], function(S, Page){
+            Page.init();
+        });
+   </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="//g.tbcdn.cn">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <!--meta name="spm-id" content="a1z2q.7513492"/-->
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon" />
+    <title>dplpage</title>
+    <script src="http://g.tbcdn.cn/kissy/m/0.2.0/??mini-full-min.js,touch-min.js" data-config="{combine:true}"></script>
+    <script src="http://g.tbcdn.cn/tb/tracker/1.0.14/index.js"></script>
+    <!--<script src="http://g.tbcdn.cn/??mtb/lib-windvane/1.5.5/windvane.js,mtb/lib-env/1.2.0/env.js"></script>-->
+
+    <!-- build:css o2o/testapp/0.0.1/dplpage/index.css -->
+    <link rel="stylesheet" href="/dplpage/index.css">
+    <!-- endbuild -->
+
+    <!-- 配置模块 -->
+    <script>
+    var basePath = '{cdnPrefix}o2o/testapp/0.0.1/',
+        l = window.location,
+        debug = ~l.href.indexOf('debug') || l.hostname === 'localhost';
+
+    if (debug) {
+        basePath = 'http://localhost:9000/';
+    }
+    KISSY.config({
+        combine: true,
+        packages: [
+            {
+              name: 'testapp',
+              base: basePath,
+              ignorePackageNameInUri: true,
+              debug: true,
+              combine: false
+            },
+            {
+              name: 'tbc/mtop',
+              path: 'http://g.tbcdn.cn/tbc/mtop/0.1.8',
+              ignorePackageNameInUri: true
+            }
+        ]
+    });
+    </script>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left">
+      <a href="../index.html" class="back link">
+        <i class="icon icon-back-blue"></i>
+        <span>Back</span>
+      </a>
+    </div>
+    <div class="center sliding">About</div>
+    <div class="right">
+      <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <div data-page="about" class="page">
+    <div class="page-content">
+      <div class="content-block">
+        <p>Here is About page!</p>
+        <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 加载脚本 -->
+<script>
+    KISSY.use(['testapp/dplpage/mods/dplmod.js'], function(S, Page){
+        Page.init();
+    });
+</script>
+<!--<script src="http://10.125.56.91:9999/target/target-script-min.js#youname"></script>-->
+</body>
+</html>

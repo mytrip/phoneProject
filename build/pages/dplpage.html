@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="dns-prefetch" href="//g.tbcdn.cn">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--meta name="spm-id" content="a1z2q.7513492"/-->
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon" />
+    <title>dplpage</title>
+    <script src="http://g.tbcdn.cn/kissy/m/0.2.0/??mini-full-min.js,touch-min.js" data-config="{combine:true}"></script>
+    <script src="http://g.tbcdn.cn/tb/tracker/1.0.14/index.js"></script>
+    <!--<script src="http://g.tbcdn.cn/??mtb/lib-windvane/1.5.5/windvane.js,mtb/lib-env/1.2.0/env.js"></script>-->
+    
+    <link rel="stylesheet" href="http://g.assets.daily.taobao.net/o2o/testapp/0.0.1/dplpage/index.css">
+
+    <!-- 配置模块 -->
+    <script>
+    var basePath = 'http://g.assets.daily.taobao.net/o2o/testapp/0.0.1/',
+        l = window.location,
+        debug = ~l.href.indexOf('debug') || l.hostname === 'localhost';
+
+    if (debug) {
+        basePath = 'http://localhost:9000/';
+    }
+    KISSY.config({
+        combine: true,
+        packages: [
+            {
+              name: 'testapp',
+              base: basePath,
+              ignorePackageNameInUri: true,
+              debug: true,
+              combine: false
+            },
+            {
+              name: 'tbc/mtop',
+              path: 'http://g.tbcdn.cn/tbc/mtop/0.1.8',
+              ignorePackageNameInUri: true
+            }
+        ]
+    });
+    </script>
+</head>
+
+<body>
+
+<div class="views">
+    <div class="view view-main">
+        <div class="pages toolbar-through">
+            <div data-page="index" class="page">
+                <div class="page-content">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 加载脚本 -->
+<script>
+    KISSY.use(['testapp/dplpage/index'], function(S, Page){
+        Page.init();
+    });
+</script>
+<!--<script src="http://10.125.56.91:9999/target/target-script-min.js#youname"></script>-->
+</body>
+</html>
